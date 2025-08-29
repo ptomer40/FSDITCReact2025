@@ -1,0 +1,50 @@
+/* body{
+    background-color: aqua;
+} */
+
+/* h2{
+    background-color: brown;
+    color: white;
+} */
+/* *{
+
+} */
+/* h2,p,h3{
+    background-color: blueviolet;
+    color: white;
+}
+
+.heading1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+} */
+
+div~p{
+    background-color: aqua;
+    color: red;
+}
+
+/* p:hover{
+    background-color: cadetblue;
+    font-size: xx-large;
+    color: chocolate;
+} */
+
+p::after{
+    content: "React Development";
+    background-color: brown;
+    color: white;
+}
+p::before{
+    content: "Hey, Learning React";
+    background-color: aquamarine;
+}
+
+p::selection{
+    background-color: chartreuse;
+}
+
+
+p:nth-child(2){
+background-color: black;
+}
