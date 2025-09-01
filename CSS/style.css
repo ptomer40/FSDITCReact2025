@@ -48,3 +48,7 @@ p::selection{
 p:nth-child(2){
 background-color: black;
 }
+
+div p:nth-of-type(1){
+    
+}
