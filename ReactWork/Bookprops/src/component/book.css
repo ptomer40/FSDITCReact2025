@@ -1,0 +1,7 @@
+.card{
+    height: 400;
+    width: 400;
+    border: 2px solid red;
+    border-radius: 10%;
+    background-color: darkorange;
+}
