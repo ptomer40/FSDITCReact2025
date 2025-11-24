@@ -9,19 +9,20 @@ import Dashboard from './component/Dashboard'
 import MainLayout from './component/MainLayout'
 
 function App() {
- 
+ const[data,setData]=useState();
 
   return (
     <>
       {/* <h2>Welcome to Shopping Cart</h2> */}
       <BrowserRouter>
       <Routes>
-        <Route path='/login' element={<Login/>}></Route>
-        <Route path='/register' element={<Registration/>} />
+        <Route path='/login' element={<Login logData={data}/>}></Route>
+        <Route path='/register' element={<Registration regData={setData}/>} />
         <Route path='/dashboard' element={<Dashboard/>} />
-        <Route path='mainlayout' element={<MainLayout/>} />
+        <Route path='/' element={<MainLayout/>} />
       </Routes>
       </BrowserRouter>
+      {JSON.stringify(data)}
     </>
   )
 }
