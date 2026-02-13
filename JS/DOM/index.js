@@ -83,14 +83,14 @@
 //Promise
 
 
-const mypromise=new Promise((resolve,reject)=>{
-const password="7868gh#$0";
-if(password.length>8){
-    resolve("Password length is ok");
-}else{
-    reject("Password length is not as per our policy");
-}
-});
+// const mypromise=new Promise((resolve,reject)=>{
+// const password="7868gh#$0";
+// if(password.length>8){
+//     resolve("Password length is ok");
+// }else{
+//     reject("Password length is not as per our policy");
+// }
+// });
 
 // mypromise.then((result)=>{console.log(result)})
 // .catch((err)=>{console.log(err)})
@@ -98,9 +98,25 @@ if(password.length>8){
 //     console.log("All the resources have closed successfully");
 // })
 
+const button=document.getElementById('btn');
+const disp=document.getElementById('disp');
+let table='<table border=1>';
+async function fetchData(){
+    disp.innerHTML="<h2>Data is loading...</h2>";
+        const response=await fetch('https://dummyjson.com/recipes');
+        const jsonData=await response.json();
+        console.log(jsonData.recipes);
+        //disp.innerHTML=`<h2>${jsonData.recipes[0].name} ${jsonData.recipes[0].id} ${jsonData.recipes[0].instructions}</h2>`;
+jsonData.recipes.forEach(element => {
+    table+=`<tr>
+    <td><img src=${element.image} height=200 width=200 alt='image'></td>
+    <td>${element.id}</td>
+    <td>${element.name}</td>
+    <td>${element.ingredients}</td>
+    </tr>`
+});
 
-async function handleData(){
-         const data= await mypromise;
-          console.log(data)   
+        table+='</table>';
+        disp.innerHTML=table;
 }
-handleData();
+button.addEventListener('click',fetchData);
