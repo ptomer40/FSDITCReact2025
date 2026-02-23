@@ -45,8 +45,17 @@ function dataDelete(){
 
 
 
+async function readFileAsync(){
+    let statusmsg="";
+    try{
+        const data= await fs1.readFile('student.json',{encoding:'utf-8'})
+         statusmsg=data;
+    }catch(e){
+       statusmsg=e;
+    }
+return statusmsg
+}
 
-
-const obj={dataWrite,dataRead,dataDelete}
+const obj={dataWrite,dataRead,dataDelete,readFileAsync}
 
 module.exports=obj;
